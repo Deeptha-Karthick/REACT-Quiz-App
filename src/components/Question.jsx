@@ -4,6 +4,8 @@ import QuestionTimer from './QuestionTimer.jsx';
 import Answers from './Answers.jsx';
 import QUESTIONS from '../questions.js';
 
+//key is used to unmount and remount the component. It is sent as a prop but cannot be consumed by the child. key is only for react to process internally. Whenever the attached key value changes, the component unmounts and re-mounts, so useState and refs are reset to their original value. It is equivalanvce to rendering a component for the first time.
+
 export default function Question({ index, onSelectAnswer, onSkipAnswer }) {
   const [answer, setAnswer] = useState({
     selectedAnswer: '',
@@ -64,3 +66,4 @@ export default function Question({ index, onSelectAnswer, onSkipAnswer }) {
     </div>
   );
 }
+
